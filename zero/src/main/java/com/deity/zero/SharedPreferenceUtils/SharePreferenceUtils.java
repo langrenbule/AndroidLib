@@ -38,6 +38,26 @@ public class SharePreferenceUtils {
         readBoolean(context, key, false);
     }
 
+    public void readFloat(Context context,String key,float defValue){
+        SharedPreferences preferences = context.getSharedPreferences(Params.APP_NAME,Context.MODE_PRIVATE);
+        preferences.getFloat(key, defValue);
+    }
+
+    public void readFloat(Context context,String key){
+        SharedPreferences preferences = context.getSharedPreferences(Params.APP_NAME,Context.MODE_PRIVATE);
+        preferences.getFloat(key,0f);
+    }
+
+    public void readLong(Context context,String key,long defValue){
+        SharedPreferences preferences = context.getSharedPreferences(Params.APP_NAME,Context.MODE_PRIVATE);
+        preferences.getLong(key, defValue);
+    }
+
+    public void readLong(Context context,String key ){
+        SharedPreferences preferences = context.getSharedPreferences(Params.APP_NAME,Context.MODE_PRIVATE);
+        preferences.getLong(key, 0L);
+    }
+
 
     public void write(Context context,String key,int value){
         SharedPreferences preferences = context.getSharedPreferences(Params.APP_NAME,Context.MODE_PRIVATE);
@@ -52,6 +72,21 @@ public class SharePreferenceUtils {
     public void write(Context context,String key,boolean value){
         SharedPreferences preferences = context.getSharedPreferences(Params.APP_NAME,Context.MODE_PRIVATE);
         preferences.edit().putBoolean(key, value).apply();
+    }
+
+    public void write(Context context,String key,long value){
+        SharedPreferences preferences = context.getSharedPreferences(Params.APP_NAME,Context.MODE_PRIVATE);
+        preferences.edit().putLong(key, value).apply();
+    }
+
+    public void write(Context context,String key,float value){
+        SharedPreferences preferences = context.getSharedPreferences(Params.APP_NAME,Context.MODE_PRIVATE);
+        preferences.edit().putFloat(key, value).apply();
+    }
+
+    public void remove(Context context,String key){
+        SharedPreferences preferences = context.getSharedPreferences(Params.APP_NAME,Context.MODE_PRIVATE);
+        preferences.edit().remove(key);
     }
 
 
