@@ -35,4 +35,41 @@ public class ByteUtils {
         result[1]=(byte)(value&0xFF);
         return result;
     }
+
+    /**
+     * int占用2个字节
+     * 项目使用过程中，经常遇到Int转4字节的byte
+     * 当前方法为高位在前，低位在后 CW顺时针
+     * 可以使用两个字节表示
+     * @param value
+     * @return
+     */
+    public byte[] int2byteCW(int value){
+        byte[] result = new byte[4];
+        result[0] = (byte)((value>>24)&0xFF);
+        result[1] = (byte)((value>>16)&0xFF);
+        result[2] = (byte)((value>>8)&0xFF);
+        result[3] = (byte)((value)&0xFF);
+        return result;
+    }
+
+
+    /**
+     * int占用2个字节
+     * 项目使用过程中，经常遇到Int转4字节的byte
+     * 当前方法为低位在前，高位在后 CCW逆时针
+     * 可以使用两个字节表示
+     * @param value
+     * @return
+     */
+    public byte[] int2byteCCW(int value){
+        byte[] result = new byte[4];
+        result[3] = (byte)((value>>24)&0xFF);
+        result[2] = (byte)((value>>16)&0xFF);
+        result[1] = (byte)((value>>8)&0xFF);
+        result[0] = (byte)((value)&0xFF);
+        return result;
+    }
+
+
 }
