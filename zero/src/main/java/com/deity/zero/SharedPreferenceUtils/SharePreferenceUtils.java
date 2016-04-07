@@ -86,7 +86,7 @@ public class SharePreferenceUtils {
 
     public void remove(Context context,String key){
         SharedPreferences preferences = context.getSharedPreferences(Params.APP_NAME,Context.MODE_PRIVATE);
-        preferences.edit().remove(key);
+        preferences.edit().remove(key).apply();
     }
 
 
