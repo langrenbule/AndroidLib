@@ -44,7 +44,7 @@ public class ByteUtils {
      * @param value
      * @return
      */
-    public byte[] int2byteCW(int value){
+    public byte[] int2byteAlong(int value){
         byte[] result = new byte[4];
         result[0] = (byte)((value>>24)&0xFF);
         result[1] = (byte)((value>>16)&0xFF);
@@ -62,7 +62,7 @@ public class ByteUtils {
      * @param value
      * @return
      */
-    public byte[] int2byteCCW(int value){
+    public byte[] int2byteInverse(int value){
         byte[] result = new byte[4];
         result[3] = (byte)((value>>24)&0xFF);
         result[2] = (byte)((value>>16)&0xFF);
