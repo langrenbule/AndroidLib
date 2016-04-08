@@ -71,5 +71,27 @@ public class ByteUtils {
         return result;
     }
 
+    /**
+     * byte[] 转Int 四位
+     * 高位在前,低位在后
+     *
+     * @param array
+     * @return
+     */
+    public int byte2Int4Along(byte[] array) {
+        return (int) ((array[0] & 0xFF) << 24) | ((array[1] & 0xFF) << 16) | ((array[2] & 0xFF) << 8) | (array[3] & 0xFF);
+    }
+
+    /**
+     * byte[] 转Int 四位
+     * 低位在前,高位在后
+     *
+     * @param array
+     * @return
+     */
+    public int byte2Int4Inverse(byte[] array) {
+        return (int) ((array[3] & 0xFF) << 24) | ((array[2] & 0xFF) << 16) | ((array[1] & 0xFF) << 8) | (array[0] & 0xFF);
+    }
+
 
 }
