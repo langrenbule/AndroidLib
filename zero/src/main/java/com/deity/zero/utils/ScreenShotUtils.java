@@ -1,8 +1,6 @@
-package com.deity.androidlib;
+package com.deity.zero.utils;
 
 import android.graphics.Bitmap;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 
 import java.io.FileOutputStream;
@@ -10,14 +8,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-
+/**
+ * 屏幕截图功能:主要就是利用SDK提供的View.getDrawingCache()方法
+ * 使用方法:
+ * 直接在View上android:onclick="getScreenShot"
+ * <p/>
+ * Created by fengwenhua on 2016/5/31.
+ */
+public class ScreenShotUtils {
 
     public void getScreenShot(View v) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.US);
@@ -50,4 +48,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
 }
